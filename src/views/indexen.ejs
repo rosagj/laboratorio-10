@@ -1,0 +1,71 @@
+<%- include('partials/_header') %>
+<div class= "container" >
+    <p align="right">
+        <a href="/" class="btn btn-secondary" align="right" >Spanish</a>
+    </p>
+</div>
+<div class = "container">
+    <div class = "row">
+        <!--From-->
+        <div class = "col-md-3">
+            <div class="card">
+                <div class = "card-body">
+                    <form action="/add/en" method="POST">
+                        <div class="form-group">
+                            <input type="text" name ="name" placeholder = "Product Name" class = "form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name ="mark" placeholder = "Brand of the product" class = "form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name ="price" placeholder = "Enter the Price" class = "form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name ="category" placeholder = "Enter the Category" class = "form-control">
+                        </div>
+                        <div class ="form-group">
+                            <textarea name="description" cols="80" class="form-control" placeholder="Enter Description"></textarea>
+                        </div >
+                        <div class = "offset-md-3">
+                            <a href="/" class="btn btn-secondary">Back</a>
+                            <button type = "Submit" class = "btn btn-primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--List-->
+        <div class = "col-md-9">
+            <table class = "table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<tasks.length; i++){ %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= tasks[i].name %></td>
+                            <td><%= tasks[i].mark %></td>
+                            <td><%= tasks[i].price %></td>
+                            <td><%= tasks[i].category %></td>
+                            <td><%= tasks[i].description %></td>
+                            <td>
+                                <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">Delete</a>
+                                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">Edit</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %>

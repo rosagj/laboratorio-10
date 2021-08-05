@@ -1,0 +1,26 @@
+[
+    {
+        "id":"1",
+        "name":"Polo",
+        "mark":"Lacoste",
+        "price":79.9,
+        "category":"ropa Masculina",
+        "description":"Polo rojo con rayas"
+    },
+    {
+        "id":"2",
+        "name":"Blusa",
+        "mark":"Zara",
+        "price":49.9,
+        "category":"Ropa Femenina",
+        "description":"Blusa de Chasis"
+    },
+    {
+        "id":"3",
+        "name":"Pantalon",
+        "mark":"Pioner",
+        "price":109.9,
+        "category":"Ropa Femenina",
+        "description":"Mom Jeans"
+    }
+]
